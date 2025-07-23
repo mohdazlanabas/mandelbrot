@@ -1,0 +1,160 @@
+body {
+  background: #181c20;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin-top: 16px;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+.controls {
+  margin: 10px auto 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.controls button {
+  background: #2d3540;
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.controls button:hover {
+  background: #4a90e2;
+}
+.controls span {
+  color: #aaa;
+  font-size: 0.95em;
+  margin-left: 8px;
+}
+canvas {
+  margin: 16px auto 0 auto;
+  display: block;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #000a;
+  background: #000;
+  width: 600px;
+  height: 400px;
+  max-width: 90vw;
+  max-height: 45vw;
+}
+.progress-container {
+  width: 600px;
+  margin: 8px auto 0 auto;
+  height: 18px;
+  background: #222;
+  border-radius: 9px;
+  position: relative;
+  box-shadow: 0 0 6px #000a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4a90e2, #2d3540);
+  border-radius: 9px 0 0 9px;
+  width: 0%;
+  transition: width 0.1s;
+}
+#progress-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 0.95em;
+  z-index: 1;
+  pointer-events: none;
+}
+.slider-container {
+  width: 600px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 1em;
+}
+#durationSlider {
+  width: 140px;
+}
+#durationValue {
+  font-weight: bold;
+  color: #4a90e2;
+}
+.info-container {
+  width: 600px;
+  margin: 12px auto 0 auto;
+  background: #23272e;
+  border-radius: 8px;
+  padding: 10px 18px 10px 18px;
+  font-size: 0.98em;
+  box-shadow: 0 0 6px #0005;
+  text-align: left;
+  max-width: 95vw;
+}
+.info-container h2 {
+  font-size: 1.2em;
+  margin: 0 0 6px 0;
+}
+.info-container .formula {
+  font-size: 1.1em;
+  margin: 0 0 6px 0;
+  color: #4a90e2;
+}
+.info-container p {
+  margin: 6px 0 6px 0;
+  line-height: 1.4;
+}
+@media (max-width: 700px) {
+  canvas, .progress-container, .slider-container, .info-container {
+    width: 98vw !important;
+    min-width: 0 !important;
+    max-width: 98vw !important;
+  }
+  canvas {
+    height: 50vw !important;
+    max-height: 60vw !important;
+  }
+  .info-container {
+    padding: 8px 4vw 8px 4vw;
+    font-size: 0.95em;
+  }
+  .controls, .slider-container {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.95em;
+  }
+  .controls button, #durationSlider {
+    width: 90vw;
+    max-width: 300px;
+    font-size: 1em;
+    padding: 10px 0;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  .info-container {
+    font-size: 0.9em;
+    padding: 6px 2vw 6px 2vw;
+  }
+  .controls button, #durationSlider {
+    font-size: 0.95em;
+    padding: 8px 0;
+  }
+  #progress-text {
+    font-size: 0.85em;
+  }
+}
